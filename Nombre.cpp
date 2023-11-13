@@ -39,14 +39,16 @@ int ListData::variationMax() const {
     return maxValue() - minValue();
 }
 int main(){
-    ListData test;
-    test.addData(3);
-    test.addData(9);
-    test.addData(13);
-    test.addData(-1);
-    std::cout<<"Moyenne : " << test.average() << std::endl;
-    test.addData(0);
-    std::cout<<"Minimum : " <<test.minValue() << std::endl;
-
+    ListData *test;
+    test = new ListData();
+    
+    test->addData(3);
+    test->addData(9);
+    test->addData(13);
+    test->addData(-1);
+    std::cout<<"Moyenne : " << test->average() << std::endl;
+    test->addData(0);
+    std::cout<<"Minimum : " <<test->minValue() << std::endl;
+    delete test;
     return 0;
 }
