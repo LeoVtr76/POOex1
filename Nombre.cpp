@@ -40,15 +40,24 @@ int ListData::variationMax() const {
 }
 int main(){
     ListData *test;
+    ListData *test2;
     test = new ListData();
-    
+    test2 = new ListData();
     test->addData(3);
     test->addData(9);
     test->addData(13);
     test->addData(-1);
-    std::cout<<"Moyenne : " << test->average() << std::endl;
-    test->addData(0);
-    std::cout<<"Minimum : " <<test->minValue() << std::endl;
+    test2->addData(-5);
+    test2->addData(-2);
+    test2->addData(-7);
+    int moy1 = test->average();
+    int moy2 = test2->average();
+    if(moy1 == moy2){
+        std::cout<<"Les deux moyennes sont identiques"<<std::endl;
+    }else {
+        std::cout<<"Les deux moyennes ne sont pas identiques"<<std::endl;
+    }
     delete test;
+    delete test2;
     return 0;
 }
